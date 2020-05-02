@@ -1,2 +1,14 @@
 ---
-# tasks file for package
+- name: Install required packages
+  package:
+    name: "{{ package_installed }}"
+    state: present
+  tags:
+    - packages
+
+- name: Removing required packages
+  package:
+    name: "{{ package_removed }}"
+    state: absent
+  tags:
+    - packages

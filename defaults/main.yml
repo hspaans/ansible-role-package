@@ -1,2 +1,3 @@
 ---
-# defaults file for package
+package_installed: []
+package_removed: []
