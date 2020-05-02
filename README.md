@@ -23,9 +23,9 @@ Example Playbook
 
     - hosts: servers
       var:
-        package_installed:
+        package_install:
           - vim
-        package_removed:
+        package_remove:
           - nano
       roles:
          - { role: hspaans.package, become: true }

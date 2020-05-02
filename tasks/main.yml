@@ -1,14 +1,14 @@
 ---
 - name: Install required packages
   package:
-    name: "{{ package_installed }}"
+    name: "{{ package_install }}"
     state: present
   tags:
     - packages
 
 - name: Removing required packages
   package:
-    name: "{{ package_removed }}"
+    name: "{{ package_remove }}"
     state: absent
   tags:
     - packages
