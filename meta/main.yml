@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: package
-  author: Hans Spaans
+  author: hspaans
   description: Manage system package
 
   license: MIT
