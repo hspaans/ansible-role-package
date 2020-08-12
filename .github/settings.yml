@@ -1,0 +1,6 @@
+---
+repository:
+  description: Ansible Role for installing or removing packages from distribution repositories.
+  topics: ansible, ansible-role, linux, packages
+  delete_branch_on_merge: true
+  has_wiki: false
