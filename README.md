@@ -28,7 +28,7 @@ Example Playbook
         package_remove:
           - nano
       roles:
-         - { role: hspaans.package, become: true }
+        - { role: hspaans.package, become: true }
 
 License
 -------
