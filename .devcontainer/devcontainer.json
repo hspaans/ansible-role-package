@@ -5,7 +5,7 @@
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "appPort": [],
-  "postCreateCommand": "ansible-galaxy install -r roles/requirements.yml",
+  "postCreateCommand": "",
   "remoteUser": "vscode",
   "extensions": [
     "github.vscode-pull-request-github",
