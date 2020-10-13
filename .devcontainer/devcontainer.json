@@ -1,0 +1,15 @@
+{
+  "image": "ghcr.io/hspaans/ansible-devcontainer:latest",
+  "name": "Ansible",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "appPort": [],
+  "postCreateCommand": "",
+  "remoteUser": "vscode",
+  "extensions": [
+    "github.vscode-pull-request-github",
+    "ms-python.python",
+    "redhat.vscode-yaml"
+  ]
+}
