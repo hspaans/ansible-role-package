@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Ansible Molecule
-        uses: hspaans/ansible-molecule-action@v0.1.0
+        uses: hspaans/ansible-molecule-action@v0.1.1
