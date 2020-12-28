@@ -1,5 +1,5 @@
 ---
-name: Run Ansible Molecule
+name: CI
 
 on:
   push:
@@ -15,5 +15,37 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Run Ansible Molecule
-        uses: hspaans/ansible-molecule-action@v0.1.1
+      # - name: Run Ansible Molecule
+      #   uses: hspaans/ansible-molecule-action@v0.1.1
+
+  molecule:
+    name: Molecule
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        distro:
+          - centos7
+          - centos8
+          - debian9
+          - debian10
+          - ubuntu1804
+          - ubuntu2004
+
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies.
+        run: pip3 install ansible molecule[docker] docker
+
+      - name: Run Molecule tests.
+        run: molecule test
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          MOLECULE_DISTRO: ${{ matrix.distro }}
