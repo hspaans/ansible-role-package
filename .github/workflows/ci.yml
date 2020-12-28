@@ -48,7 +48,8 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          pip3 install ansible ansible-lint flake8 molecule[docker] docker pytest
+          pip3 install ansible ansible-lint flake8 molecule[docker] docker pytest \
+            pytest-testinfra
 
       - name: Run Molecule tests
         run: molecule test -s ${{ matrix.distro }}
