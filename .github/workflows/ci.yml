@@ -8,15 +8,20 @@ on:
       - master
 
 jobs:
-  test:
+
+  lint:
+    name: Lint Code Base
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v2
 
-      # - name: Run Ansible Molecule
-      #   uses: hspaans/ansible-molecule-action@v0.1.1
+      - name: Lint Code Base
+        uses: github/super-linter@v3.13.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANSIBLE_DIRECTORY: /
 
   molecule:
     name: Molecule
