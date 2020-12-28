@@ -9,7 +9,7 @@ lint: |
   ansible-lint
   flake8
 platforms:
-  - name: debian-buster
+  - name: instance
     image: "geerlingguy/docker-debian10-ansible:latest"
     command: ""
     volumes:
