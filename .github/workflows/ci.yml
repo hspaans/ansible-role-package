@@ -38,19 +38,19 @@ jobs:
           - ubuntu2004
 
     steps:
-      - name: Check out the codebase.
+      - name: Check out the codebase
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.
+      - name: Set up Python 3
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
 
-      - name: Install test dependencies.
-        run: pip3 install ansible ansible-lint flake8 molecule[docker] docker
+      - name: Install test dependencies
+        run: pip3 install ansible ansible-lint flake8 molecule[docker] docker pytest
 
-      - name: Run Molecule tests.
-        run: molecule test
+      - name: Run Molecule tests
+        run: molecule test -s ${{ matrix.distro }}
         env:
           PY_COLORS: "1"
           ANSIBLE_FORCE_COLOR: "1"
