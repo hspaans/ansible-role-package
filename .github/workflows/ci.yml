@@ -29,6 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        ansible:
+          - "==2.9.*"
+          - "==2.10.*"
         distro:
           - centos7
           - centos8
@@ -48,12 +51,11 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          pip3 install ansible ansible-lint flake8 molecule[docker] docker pytest \
-            pytest-testinfra
+          pip3 install ansible-base${{ matrix.ansible}} ansible-lint molecule[docker] docker \
+            flake8 pytest pytest-testinfra
 
       - name: Run Molecule tests
         run: molecule test -s ${{ matrix.distro }}
         env:
           PY_COLORS: "1"
           ANSIBLE_FORCE_COLOR: "1"
-          MOLECULE_DISTRO: ${{ matrix.distro }}
