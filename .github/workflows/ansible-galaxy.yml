@@ -4,7 +4,9 @@ name: Release Ansible Role to Galaxy
 on:
   push:
     tags:
-      - "v*"
+      - v*
+    branches:
+      - master
 
 jobs:
   build:
