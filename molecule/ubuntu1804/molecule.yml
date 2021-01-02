@@ -10,7 +10,7 @@ lint: |
   flake8
 platforms:
   - name: instance
-    image: "geerlingguy/docker-ubuntu1804-ansible:latest"
+    image: "ghcr.io/hspaans/molecule-container-ubuntu:18.04"
     command: ""
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
