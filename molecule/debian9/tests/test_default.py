@@ -3,14 +3,14 @@
 import pytest
 
 
-@pytest.mark.parametrize("pkg", ["nano"])
+@pytest.mark.parametrize("pkg", ["zip"])
 def test_pkg_installed(host, pkg):
     package = host.package(pkg)
 
     assert package.is_installed
 
 
-@pytest.mark.parametrize("pkg", ["joe"])
+@pytest.mark.parametrize("pkg", ["bzip2"])
 def test_pkg_not_installed(host, pkg):
     package = host.package(pkg)
 

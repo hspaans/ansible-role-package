@@ -22,8 +22,8 @@ provisioner:
     group_vars:
       all:
         package_install:
-          - nano
+          - zip
         package_remove:
-          - joe
+          - bzip2
 verifier:
   name: testinfra

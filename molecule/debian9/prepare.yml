@@ -17,10 +17,10 @@
   tasks:
     - name: Install packages
       package:
-        name: joe
+        name: bzip2
         state: present
 
     - name: Remove packages
       package:
-        name: nano
+        name: zip
         state: absent
