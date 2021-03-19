@@ -4,4 +4,4 @@ molecule-docker==0.2.4
 docker==4.4.4
 flake8==3.9.0
 pytest==6.2.2
-pytest-testinfra==6.1.0
+pytest-testinfra==6.2.0
