@@ -32,7 +32,7 @@ jobs:
       matrix:
         ansible:
           - "ansible==2.9.*"
-          - "ansible-base==2.10.*"
+          - "ansible==2.10.*"
         distro:
           - centos7
           - centos8
