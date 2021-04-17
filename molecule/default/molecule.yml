@@ -11,7 +11,7 @@ lint: |
   flake8
 platforms:
   - name: instance
-    image: "ghcr.io/hspaans/molecule-container-centos:7"
+    image: "ghcr.io/hspaans/molecule-container-${MOLECULE_DISTRO}"
     command: ""
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
