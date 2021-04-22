@@ -3,9 +3,6 @@ name: CI
 
 on:
   pull_request:
-  push:
-    branches:
-      - master
 
 jobs:
 
@@ -33,7 +30,6 @@ jobs:
         ansible:
           - "ansible==2.9.*"
           - "ansible==2.10.*"
-          - "ansible==3.*"
         distro:
           - centos:7
           - centos:8
