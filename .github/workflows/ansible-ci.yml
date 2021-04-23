@@ -52,8 +52,7 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          pip3 install ${{ matrix.ansible }}
-          pip3 install -r requirements.txt
+          pip3 install ${{ matrix.ansible }} ansible-lint molecule molecule-docker docker flake8 pytest pytest-testinfra
 
       - name: Run Molecule tests
         run: molecule test
