@@ -5,7 +5,6 @@ driver:
   name: docker
 lint: |
   set -e
-  export ANSIBLE_ROLES_PATH=${MOLECULE_PROJECT_DIRECTORY}/..
   yamllint .
   ansible-lint
   flake8
