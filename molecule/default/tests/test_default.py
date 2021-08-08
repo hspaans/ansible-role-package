@@ -5,6 +5,7 @@ import pytest
 
 @pytest.mark.parametrize("pkg", ["zip"])
 def test_pkg_installed(host, pkg):
+    """Test if package installed."""
     package = host.package(pkg)
 
     assert package.is_installed
@@ -12,6 +13,7 @@ def test_pkg_installed(host, pkg):
 
 @pytest.mark.parametrize("pkg", ["bzip2"])
 def test_pkg_not_installed(host, pkg):
+    """Test if package installed."""
     package = host.package(pkg)
 
     assert not package.is_installed

@@ -1,5 +1,5 @@
 ---
-name: Release Ansible Role to Galaxy
+name: Release to Ansible Galaxy
 
 on:
   push:
@@ -9,7 +9,8 @@ on:
       - master
 
 jobs:
-  build:
+  release:
+    name: Release to Ansible Galaxy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
