@@ -6,9 +6,10 @@ import os
 import pytest
 
 
-def pytest_runtest_setup(item):
+def pytest_runtest_setup():
     """Run tests only when under molecule with testinfra installed."""
     try:
+        # pylint: disable = import-outside-toplevel
         import testinfra
     except ImportError:
         pytest.skip("Test requires testinfra", allow_module_level=True)
