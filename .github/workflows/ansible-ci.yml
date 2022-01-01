@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v2
 
       - name: Lint Code Base
-        uses: github/super-linter@v4.8.4
+        uses: github/super-linter@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Check out the codebase
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v2
 
       - name: Set up Python 3
         uses: actions/setup-python@v2.3.1
