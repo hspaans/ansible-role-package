@@ -9,7 +9,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '30 5 15 * *'
+    - cron: '30 5 14 * *'
 
 jobs:
   ansible-role-ci:
