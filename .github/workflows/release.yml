@@ -1,21 +1,12 @@
 ---
-name: Release to Ansible Galaxy
+name: Release
 
 on:
-  push:
-    tags:
-      - v*
-    branches:
-      - master
+  release:
 
 jobs:
-  release:
-    name: Release to Ansible Galaxy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.4.0
-      - name: Release Ansible Role to Galaxy
-        uses: hspaans/ansible-galaxy-action@v0.3.8
-        with:
-          api_key: ${{ secrets.galaxy_api_key }}
+  ansible-role-release:
+    name: Ansible Role Release
+    uses: hspaans/.github/.github/workflows/ansible-role-release.yml@master
+    secrets:
+      token: ${{ secrets.GALAXY_API_KEY }}

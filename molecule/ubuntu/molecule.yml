@@ -1,0 +1,50 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  # stop the build if yamllint fails
+  yamllint `git ls-files '*.yaml' '*.yml'`
+  # stop the build if there are Python syntax errors or undefined names
+  flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+  # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+  flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+platforms:
+  - name: ubuntu-18.04
+    image: "ghcr.io/hspaans/molecule-container-ubuntu:18.04"
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+  - name: ubuntu-20.04
+    image: "ghcr.io/hspaans/molecule-container-ubuntu:20.04"
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+  - name: ubuntu-22.04
+    image: "ghcr.io/hspaans/molecule-container-ubuntu:22.04"
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../resources/playbooks/converge.yml
+    prepare: ../resources/playbooks/prepare.yml
+  inventory:
+    group_vars:
+      all:
+        package_install:
+          - zip
+        package_remove:
+          - bzip2
+verifier:
+  name: testinfra
+  directory: ../resources/tests/

@@ -1,0 +1,26 @@
+---
+- name: Prepare
+  hosts: all
+
+  pre_tasks:
+    - name: Update apt cache (on Debian).
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_os_family == 'Debian'
+
+    - name: Update yum cache (on Redhat).
+      yum:
+        update_cache: true
+      when: ansible_os_family == 'RedHat'
+
+  tasks:
+    - name: Install packages
+      package:
+        name: bzip2
+        state: present
+
+    - name: Remove packages
+      package:
+        name: zip
+        state: absent
