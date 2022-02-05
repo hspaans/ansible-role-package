@@ -1,0 +1,17 @@
+---
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '30 5 15 * *'
+
+jobs:
+  ansible-role-ci:
+    name: Ansible Role CI
+    uses: hspaans/.github/.github/workflows/ansible-role-ci.yml@master
