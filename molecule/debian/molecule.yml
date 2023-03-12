@@ -35,6 +35,7 @@ platforms:
   - name: debian-12
     image: "ghcr.io/hspaans/molecule-container-debian:12"
     command: ""
+    cgroupns_mode: host
     tmpfs:
       - /run
       - /tmp
