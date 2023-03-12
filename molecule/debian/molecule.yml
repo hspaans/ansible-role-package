@@ -32,6 +32,13 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
+  - name: debian-12
+    image: "ghcr.io/hspaans/molecule-container-debian:12"
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
 provisioner:
   name: ansible
   playbooks:
