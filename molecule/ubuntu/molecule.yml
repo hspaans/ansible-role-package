@@ -29,6 +29,10 @@ platforms:
   - name: ubuntu-22.04
     image: "ghcr.io/hspaans/molecule-container-ubuntu:22.04"
     command: ""
+    cgroupns_mode: host
+    tmpfs:
+      - /run
+      - /tmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
