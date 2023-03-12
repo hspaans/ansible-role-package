@@ -6,12 +6,9 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 4.0.0
+  min_ansible_version: 7.0.0
 
   platforms:
-    - name: EL
-      versions:
-        - 7
     - name: Debian
       versions:
         - buster
@@ -26,4 +23,4 @@ galaxy_info:
     - package
     - repository
 
-dependencies: []
+dependencies: [ ]
