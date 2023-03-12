@@ -12,13 +12,6 @@ lint: |
   # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
   flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 platforms:
-  - name: ubuntu-18.04
-    image: "ghcr.io/hspaans/molecule-container-ubuntu:18.04"
-    command: ""
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
   - name: ubuntu-20.04
     image: "ghcr.io/hspaans/molecule-container-ubuntu:20.04"
     command: ""
