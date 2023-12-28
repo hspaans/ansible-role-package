@@ -11,5 +11,6 @@
 ## Python
 .pytest_cache/
 __pycache__/
-*.py[cod]
+*.py[codz]
 *$py.class
+pytestdebug.log
