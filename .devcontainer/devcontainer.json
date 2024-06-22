@@ -1,0 +1,29 @@
+{
+    "name": "Python 3",
+    "image": "mcr.microsoft.com/devcontainers/python:3.10",
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers-contrib/features/ansible:2": {},
+        "ghcr.io/devcontainers-contrib/features/yamllint:2": {},
+        "ghcr.io/hspaans/devcontainer-features/ansible-lint:1": {},
+        "ghcr.io/hspaans/devcontainer-features/pytest:1": {},
+        "ghcr.io/hspaans/devcontainer-features/pymarkdownlnt:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "EditorConfig.EditorConfig",
+                "ms-python.autopep8",
+                "ms-python.flake8",
+                "redhat.ansible",
+                "redhat.vscode-yaml"
+            ],
+            "[python]": {
+                "editor.defaultFormatter": "ms-python.autopep8",
+                "editor.formatOnSave": true
+            },
+            "ansible.python.interpreterPath": "/usr/local/bin/python",
+            "python.formatting.provider": "none"
+        }
+    }
+}
