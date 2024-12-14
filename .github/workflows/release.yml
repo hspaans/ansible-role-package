@@ -9,6 +9,6 @@ on:
 jobs:
   ansible-role-release:
     name: Ansible Role Release
-    uses: hspaans/.github/.github/workflows/ansible-role-release.yml@v2024.12.05-1
+    uses: hspaans/.github/.github/workflows/ansible-role-release.yml@v2024.12.14-1
     secrets:
       token: ${{ secrets.GALAXY_API_KEY }}
